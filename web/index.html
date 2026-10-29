@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>14万分の1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="intro" class="screen">
+      <p class="eyebrow">土浦市</p>
+      <h1>14万分の1</h1>
+      <p class="lead">今この瞬間、土浦市に暮らす<br><span id="intro-total">約14万</span>人のうちの、誰かになる。</p>
+      <button id="start" class="primary">誰かになる</button>
+    </section>
+
+    <section id="result" class="screen" hidden>
+      <p class="eyebrow">あなたは</p>
+      <h2 class="who"><span id="age"></span><span class="unit">歳</span> <span id="sex"></span></h2>
+      <p class="where">土浦市のこのあたりで暮らしています。</p>
+
+      <div class="map">
+        <iframe id="map" title="住んでいる場所" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="map-actions">
+        <div class="toggle" role="group" aria-label="地図の種類">
+          <button data-type="m" aria-pressed="true">地図</button>
+          <button data-type="k" aria-pressed="false">航空写真</button>
+        </div>
+        <a id="gmap-link" target="_blank" rel="noopener">Google マップで開く ↗</a>
+      </div>
+
+      <dl class="facts">
+        <div><dt>座標</dt><dd id="coord"></dd></div>
+        <div><dt>250mメッシュ</dt><dd id="mesh"></dd></div>
+        <div><dt>このメッシュの人口</dt><dd id="mesh-pop"></dd></div>
+        <div><dt>同じメッシュの同年代・同性</dt><dd id="peers"></dd></div>
+      </dl>
+      <p id="note" class="note" hidden></p>
+
+      <button id="again" class="primary">別の誰かになる</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>人口: 令和2年国勢調査 地域メッシュ統計（250mメッシュ・5歳階級別人口）／行政界: 国土数値情報（行政区域データ）を加工して作成。<br>
+    住所はメッシュ人口、年齢・性別はメッシュ内の5歳階級別人口に比例した確率で選んでいます。</p>
+  </footer>
+
+  <script src="data/tsuchiura.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
